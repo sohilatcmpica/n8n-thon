@@ -825,52 +825,95 @@ main {
   background: #fff;
 }
 
-.register-form {
+.register-copy .button {
+  margin-top: 26px;
+}
+
+.register-qr {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: center;
   gap: 14px;
-  padding: 20px;
+  padding: 28px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--paper);
+  text-align: center;
 }
 
-.register-form label {
-  display: grid;
-  gap: 8px;
-  color: var(--ink);
-  font-size: 0.9rem;
-  font-weight: 800;
-}
-
-.register-form input,
-.register-form select,
-.register-form textarea {
-  width: 100%;
-  border: 1px solid rgba(18, 19, 24, 0.18);
+.qr-placeholder {
+  width: 190px;
+  padding: 14px;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 13px 14px;
-  color: var(--ink);
-  font: inherit;
   background: #fff;
+  box-shadow: 0 12px 28px rgba(18, 19, 24, 0.08);
 }
 
-.register-form input:focus,
-.register-form select:focus,
-.register-form textarea:focus {
-  outline: 3px solid rgba(0, 208, 156, 0.3);
-  border-color: var(--mint);
+.qr-placeholder svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.full {
-  grid-column: 1 / -1;
-}
-
-.form-note {
-  grid-column: 1 / -1;
+.qr-note {
   margin: 0;
+  max-width: 260px;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.86rem;
+}
+
+.contact-ribbon {
+  margin: 18px 0;
+  padding: 16px clamp(16px, 4vw, 28px);
+  border-radius: 8px;
+  background: var(--ink);
+  box-shadow: 0 16px 40px rgba(18, 19, 24, 0.16);
+}
+
+.ribbon-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+}
+
+.ribbon-tag {
+  color: var(--mint);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ribbon-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.ribbon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.94rem;
+}
+
+.ribbon-link:hover,
+.ribbon-link:focus-visible {
+  color: var(--mint);
+}
+
+@media (max-width: 620px) {
+  .ribbon-divider {
+    display: none;
+  }
+
+  .ribbon-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .site-footer {
@@ -1041,7 +1084,6 @@ main {
   }
 
   .detail-list,
-  .register-form,
   .stats-strip {
     grid-template-columns: 1fr;
   }

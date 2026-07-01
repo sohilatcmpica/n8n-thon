@@ -78,15 +78,3 @@ if ("IntersectionObserver" in window) {
 } else {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
-
-const registerForm = document.querySelector(".register-form");
-const formNote = document.querySelector(".form-note");
-
-if (registerForm && formNote) {
-  registerForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const teamName = new FormData(registerForm).get("team") || "Your team";
-    formNote.textContent = `${teamName} is ready for n8n-thon. Connect this form to your live registration system before publishing.`;
-    registerForm.reset();
-  });
-}
