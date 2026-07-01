@@ -239,10 +239,12 @@ main {
 }
 
 .grad-word {
-  background: linear-gradient(135deg, var(--coral), var(--amber) 55%, var(--violet));
+  background: linear-gradient(135deg, var(--coral), #e08e00 55%, var(--violet));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
 }
 
 .eyebrow {
